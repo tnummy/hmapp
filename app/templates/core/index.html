@@ -2,7 +2,7 @@
 {% block body %}
 
 <h1>Requisition Kick Off</h1>
-<form>
+<form action="/post" method="post">
 {% for r in req: %}
     {{ r[1] }}
  {% if r | length == 3: %}
@@ -16,6 +16,7 @@
  {% endif %}
     </br>
 {% endfor %}
+    <input type="submit" value="Submit">
 </form>
 
 {% endblock %}
