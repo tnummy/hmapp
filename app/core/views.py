@@ -12,4 +12,5 @@ def index():
   # return (render_template('core/index.html', resources=repository.getResources()))
 
     ws = Webservices()
-    return ws.getReqForm()
+    return jsonify(ws.getReqForm())
+    # return ws.getPropTable()
