@@ -2,7 +2,13 @@
 {% block layout %}
 <body>
     <header>
-        <nav></nav>
+         <nav class="navbar navbar-default" role="navigation">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <a class="navbar-brand" href=""><img alt="Find Jobs at CareerBuilder" height="32" width="210" src="{{ url_for ('static',filename='css/logo.svg') }}">
+                </a>
+              </div>
+          </nav>
     </header>
     <article>
         {% block body %}{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h1>Requisition Kick Off</h1>
+<form action="/post" method="post">
+{% for r in req: %}
+    {{ r[1] }}
+ {% if r | length == 3: %}
+  <input type="{{ r[2] }}" name="{{ r[0] }}">
+ {% else: %}
+    <select type="{{ r[2] }}" name="{{ r[0] }}">
+    {% for o in r[3]: %}
+        <option value="{{ o['id'] }}">{{ o['lib'] }}</option>
+    {% endfor %}
+    </select>
+ {% endif %}
+    </br>
+{% endfor %}
+    <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
