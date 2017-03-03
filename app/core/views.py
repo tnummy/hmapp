@@ -12,8 +12,19 @@ def index():
   # return (render_template('core/index.html', resources=repository.getResources()))
 
     ws = Webservices()
-    return jsonify(ws.getReqForm())
+    return (render_template('core/index.html', req=ws.getPropTable()))
     # return jsonify(ws.getPropTable())
+
+
+
+@mod.route('/post')
+def post():
+    ws = Webservices()
+    # ws.postReq()
+    return (render_template('core/index.html', req=ws.postReq()))
+
+
+
 
 
 
@@ -23,5 +34,5 @@ def getfields():
   # return (render_template('core/index.html', resources=repository.getResources()))
 
     ws = Webservices()
-    # return jsonify(ws.getReqForm())
-    return jsonify(ws.getPropTable())
+    return jsonify(ws.getReqForm())
+    # return jsonify(ws.getPropTable())
